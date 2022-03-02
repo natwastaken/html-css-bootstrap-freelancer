@@ -1,0 +1,210 @@
+:root {
+  --green-color: 26, 188, 156;
+  --dark-green-color: 44, 62, 80;
+  --font-color-base: 0, 0, 0;
+  --font-color-light: 255, 255, 255;
+}
+
+/* Extend Bootstrap Utilities */
+.pb-6 {
+  padding-bottom: 4rem!important;
+}
+.pt-6 {
+  padding-top: 4rem!important;
+}
+.rounded-6 {
+  border-radius: 0.6rem!important;
+}
+
+/* DEBUG
+.container {
+  background-color: aqua;
+  height: 100px; 
+} */
+
+/* Common */
+.bg-green {
+  background-color: rgb(var(--green-color));
+}
+
+/* Layout */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Typo */
+.h1, 
+.h2, 
+.h3, 
+.h4, 
+.h5, 
+.h6, 
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+.section-title {
+  font-size: 3em;
+  text-transform: uppercase;
+}
+
+.star {
+  font-size: 2em;
+  margin: 2rem 0;
+}
+.star::before,
+.star::after {
+  display: inline-block;
+  content: '';
+  width: 10%;
+  height: 3px;
+  border-radius: 5px;
+  background-color: rgb(var(--font-color-light));
+  vertical-align: middle;
+}
+.star.black {
+  color: rgb(var(--font-color-base));
+}
+.star.black::before,
+.star.black::after { 
+  background-color: rgb(var(--font-color-base));
+}
+/* Header */
+.header {
+  background-color: rgb(var(--dark-green-color));
+  color: rgb(var(--font-color-light));
+  text-transform: uppercase;
+}
+.header .header-container {
+  padding-top: 2.7rem;
+  padding-bottom: 2.7rem;
+}
+.header .logo {
+  font-size: 1.7em;
+}
+.header .nav-menu {
+  font-weight: bold;
+}
+.header .nav-menu a {
+  color: rgb(var(--font-color-light));
+}
+.header .nav-menu a:hover, 
+.header .nav-menu a:active, 
+.header .nav-menu a:focus {
+  color: rgb(var(--green-color));
+}
+/* Jumbo */
+.jumbotron {
+  background-color: rgb(var(--green-color));
+  color: rgb(var(--font-color-light));
+}
+.jumbotron .img-avatar {
+  width: 250px;
+}
+.jumbotron .jumbotron-title {
+  font-size: 4em;
+}
+.jumbotron .jumbotron-subtitle {
+  font-weight: normal;
+}
+
+
+@media screen and (max-width: 576px) {
+  .header h1 {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    font-size: 0.7em;
+  }
+}
+
+/* Main */
+/* Portfolio */
+.portfolio .image {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  /* height: 300px; */
+  /* background-color: salmon; */
+}
+.portfolio .image::after { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: '+';
+  width: 100%;
+  height: 100%;
+  font-size: 7em;
+  color: transparent;
+  background-color: rgba(var(--green-color), 0);
+  transition: all 0.5s;
+}
+.portfolio .image:hover::after {
+  color: rgb(var(--font-color-light));
+  background-color: rgba(var(--green-color), 1);
+}
+
+.about {
+  color: rgb(var(--font-color-light));
+}
+
+.contact {
+  font-size: 1.5em;
+}
+.contact form label {
+  color: rgb(var(--font-color-base), 0.7);
+  transition: all 0.3s;
+}
+.contact form input,
+.contact form textarea {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+.contact form .row-input:focus-within label {
+  font-size: 0.7em;
+}
+
+
+/* Footer */
+.footer { 
+  color: rgb(var(--font-color-light));
+}
+.footer .footer-top{
+  background-color: rgba(var(--dark-green-color), 0.9);
+}
+.footer .footer-bottom{
+  background-color: rgba(var(--dark-green-color));
+}
+.footer .menu-footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+}
+@media screen and (max-width: 991px) {
+  .footer {  
+    font-size: 0.7em;
+  }
+  .footer .menu-footer a {
+    width: 2em;
+    height: 2em;
+  }
+}
